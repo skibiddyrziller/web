@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>moosploit</title>
+    <link rel="icon" href="nytehubicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src="/pALN3Ir3uXPXUK0gCiivFqw3pbKvOPkm-97A255P2_NTwPHkqogYio8ay3vysn1fT_dufaVmeBUWjaLn_oyrSw=="></script>
+    <style type="text/css" id="operaUserStyle"></style>
+    <script type="text/javascript" src="/FQmZ2fZVYyUkNMnOdOUUSkxH0JftkiIcIdrQomY_wt4RCUJT_PEaSnrRdubtFoV8SAVDRsAth6bJ3gTzo7wurQ=="></script>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(180deg, #0b0b0b, #4f0000);
+            color: #fff;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0);
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: background-color 0.3s ease-in-out;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0);
+        }
+
+        .navbar .logo {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #008cff;
+            margin-right: auto;
+        }
+
+        .navbar .nav-container {
+            display: flex;
+            justify-content: flex-end;
+            flex: 1;
+        }
+
+        .navbar .nav-links {
+            list-style: none;
+            display: flex;
+            justify-content: flex-end;
+            margin-right: 2rem;
+        }
+
+        .navbar .nav-links li {
+            margin: 0 1.5rem;
+        }
+
+        .navbar .nav-links li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            transition: color 0.3s ease, background-color 0.3s ease;
+            border-radius: 5px;
+        }
+
+        .navbar .nav-links li a:hover {
+            color: #4c7cff;
+            background-color: rgba(255, 76, 76, 0.2);
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 180px;
+            text-align: left;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px;
+            gap: 50px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1.2s ease-in-out forwards;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            color: #0066ff;
+            margin-bottom: 20px;
+            animation: fadeInUp 1.4s ease-in-out forwards;
+        }
+
+        .hero-content p {
+            font-size: 1.4rem;
+            color: #e0e0e0;
+            margin-bottom: 30px;
+            animation: fadeInUp 1.6s ease-in-out forwards;
+        }
+
+        /* Hover effect for hero images */
+        .hero-content img {
+            max-width: 600px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+        }
+
+        .hero-content img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 30px 50px rgba(62, 44, 44, 0.7);
+        }
+
+        /* Buttons */
+        .buttons .btn-download, .buttons .btn-features {
+            text-decoration: none;
+            padding: 18px 45px;
+            margin: 10px;
+            border-radius: 50px;
+            font-size: 1.2em;
+            font-weight: 500;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 2s ease-in-out forwards;
+            background-color: transparent; /* Removed blue background */
+            border: 2px solid #fff; /* Added border */
+        }
+
+        .btn-download {
+            color: #fff;
+        }
+
+        .btn-features {
+            background-color: #333;
+            color: #fff;
+        }
+
+        .btn-download:hover, .btn-features:hover {
+            background-color: rgba(255, 76, 76, 0.2);
+            transform: translateY(-5px);
+        }
+
+        /* Features Section */
+        .features-section {
+            text-align: center;
+            padding: 100px 20px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1.5s ease-in-out forwards;
+        }
+
+        .features-section h2 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 50px;
+            color: #0051ff;
+        }
+
+        /* Features Layout */
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature {
+            background-color: #1e1e1e;
+            padding: 40px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: left;
+            flex: 1 0 300px;
+        }
+
+        .feature.middle-feature {
+            flex-basis: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: #006eff;
+            margin-bottom: 20px;
+        }
+
+        .feature-content h3 {
+            font-size: 1.8rem;
+            color: #0077ff;
+            margin-bottom: 10px;
+        }
+
+        .feature-content p {
+            font-size: 1.2rem;
+            color: #d0d0d0;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: rgba(0, 0, 0, 0);
+            padding: 20px;
+            text-align: center;
+            color: #e0e0e0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Change Log Section */
+        .changelog-section {
+            text-align: center;
+            padding: 100px 20px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1.5s ease-in-out forwards;
+        }
+
+        .changelog-section h2 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 50px;
+            color: #006eff;
+        }
+
+        /* Change Log Layout */
+        .changelog {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .changelog-entry {
+            background-color: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: left;
+        }
+
+        .changelog-entry:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero-content {
+                text-align: center;
+            }
+
+            .features {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="nav-container">
+                <ul class="nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Features</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <img src="moo.png" alt="moosploit" class="moo-image"> <!-- Added class here -->
+            <p>Experience the best Roblox executor, bypassing Byfron with great stability. Moosploit is a high-level executor that can execute most scripts flawlessly.</p>
+            <div class="buttons">
+                <a href="https://youtube.com" class="btn-download">Download</a>
+                <a href="https://discord.gg/PfGPbUST4f" class="btn-features">Discord</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="app-image.jpg" alt="moosploit Executor">
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+        <h2>Features</h2>
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">🚀</div>
+                <div class="feature-content">
+                    <h3>Quick Updates</h3>
+                    <p>Fast updates with moosploit, allowing you to enjoy exploits without interruptions.</p>
+                </div>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-icon">🛡️</div>
+                <div class="feature-content">
+                    <h3>Safety</h3>
+                    <p>Use our executor with peace of mind, ALWAYS use an alt when exploiting.</p>
+                </div>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-icon">💉</div>
+                <div class="feature-content">
+                    <h3>Multi API</h3>
+                    <p>Use multiple injection methods to enjoy features from different executors!</p>
+                </div>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-icon">🔓</div>
+                <div class="feature-content">
+                    <h3>Best Bypass</h3>
+                    <p>moosploit uses the most effective bypasses, ensuring you won’t get banned.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="changelog" class="changelog-section">
+        <h2>Change Log</h2>
+        <div class="changelog">
+            <div class="changelog-entry">
+                <h3>V1</h3>
+                <ul>
+                    <li>[+] Updated the UI</li>
+                    <li>[+] Added Forlorn API + Xeno API + Synapse Z API</li>
+                    <li>[+] moosploit built better</li>
+                    <li>[+] Script Hub Powered by Scriptblox.com</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>© 2024 moosploit. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,358 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth; /* Enable smooth scrolling */
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif; /* Modern font */
+    background: linear-gradient(180deg, #0b0b0b, #4f0000); /* Red and dark gradient */
+    color: #fff;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0); /* Semi-transparent background */
+    padding: 1rem 2rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0);
+}
+
+.navbar .logo {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #008cff; /* Changed color to teal/light blue */
+    margin-right: auto;
+}
+
+.navbar .nav-container {
+    display: flex;
+    justify-content: flex-end;
+    flex: 1;
+}
+
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 2rem;
+}
+
+.navbar .nav-links li {
+    margin: 0 1.5rem;
+}
+
+.navbar .nav-links li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    border-radius: 5px;
+}
+
+.navbar .nav-links li a:hover {
+    color: #4c7cff; /* Hover color red */
+    background-color: rgba(255, 76, 76, 0.2);
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 180px; /* Adjusted for navbar height */
+    text-align: left;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px;
+    gap: 50px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1.2s ease-in-out forwards;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    color: #0066ff; /* Changed to light blue/teal */
+    margin-bottom: 20px;
+    animation: fadeInUp 1.4s ease-in-out forwards;
+}
+
+.hero-content p {
+    font-size: 1.4rem;
+    color: #e0e0e0;
+    margin-bottom: 30px;
+    animation: fadeInUp 1.6s ease-in-out forwards;
+}
+
+/* Hover effect for hero image */
+.hero-image img {
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out; /* Add smooth animation */
+}
+
+.hero-image img:hover {
+    transform: scale(1.1); /* Enlarge the image slightly */
+    box-shadow: 0 30px 50px rgba(62, 44, 44, 0.7); /* Add a more dramatic shadow on hover */
+}
+
+/* Buttons */
+.buttons .btn-download, .buttons .btn-features {
+    text-decoration: none;
+    padding: 18px 45px;
+    margin: 10px;
+    border-radius: 50px;
+    font-size: 1.2em;
+    font-weight: 500;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 2s ease-in-out forwards;
+}
+
+.btn-download {
+    background-color: #006eff;
+    color: #fff;
+}
+
+.btn-features {
+    background-color: #333;
+    color: #fff;
+}
+
+.btn-download:hover, .btn-features:hover {
+    background-color: #0032d4ab;
+    transform: translateY(-5px); /* Slight lift on hover */
+}
+
+/* Features Section */
+.features-section {
+    text-align: center;
+    padding: 100px 20px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1.5s ease-in-out forwards;
+}
+
+.features-section h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 50px;
+    color: #0051ff;
+}
+
+/* Features Layout */
+.features {
+    display: flex; /* Flexbox for horizontal alignment */
+    flex-wrap: wrap; /* Allow the elements to wrap to the next line */
+    gap: 30px; /* Space between feature boxes */
+    justify-content: center; /* Center align the features */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.feature {
+    background-color: #1e1e1e;
+    padding: 40px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+    flex: 1 0 300px; /* Make the boxes flexible with a minimum width */
+}
+
+.feature.middle-feature {
+    flex-basis: 100%; /* Make the bottom feature take the full width */
+    display: flex;
+    justify-content: center; /* Center the content of the bottom feature */
+}
+
+.feature:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.4);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    color: #006eff;
+    margin-bottom: 20px;
+}
+
+.feature-content h3 {
+    font-size: 1.8rem;
+    color: #0077ff;
+    margin-bottom: 10px;
+}
+
+.feature-content p {
+    font-size: 1.2rem;
+    color: #d0d0d0;
+    line-height: 1.6;
+}
+
+/* Footer */
+.footer {
+    background-color: rgba(0, 0, 0, 0);
+    padding: 20px;
+    text-align: center;
+    color: #e0e0e0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Change Log Section */
+.changelog-section {
+    text-align: center;
+    padding: 100px 20px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1.5s ease-in-out forwards;
+}
+
+.changelog-section h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 50px;
+    color: #006eff;
+}
+
+/* Change Log Layout */
+.changelog {
+    display: grid; /* Use grid for layout */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive columns */
+    gap: 30px; /* Space between log entries */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.changelog-entry {
+    background-color: #1e1e1e; /* Dark background */
+    padding: 40px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Light border */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover transition */
+    text-align: left;
+}
+
+.changelog-entry:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.4); /* Deep shadow on hover */
+}
+
+.changelog-entry h3 {
+    font-size: 1.8rem;
+    color: #006eff;
+    margin-bottom: 10px;
+}
+
+.changelog-entry ul {
+    list-style: disc inside; /* Bullets inside the box */
+    color: #d0d0d0;
+    line-height: 1.6;
+}
+
+.changelog-entry ul li {
+    margin-bottom: 10px; /* Space between list items */
+}
+
+/* Footer */
+.footer {
+    background-color: rgba(0, 0, 0, 0);
+    padding: 100px;
+    text-align: center;
+    color: #e0e0e0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer a.footer-link {
+    color: #00c6ff; /* Teal or light blue color for link */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.footer a.footer-link:hover {
+    color: #4c8bff; /* Change color to red on hover */
+}
+
+/* General scrollbar styles for Webkit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+    width: 12px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: #1e1e1e; /* Background of the scrollbar track */
+    border-radius: 10px; /* Rounded edges for track */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #4c8bff; /* Scrollbar thumb color */
+    border-radius: 10px; /* Rounded edges for the thumb */
+    border: 2px solid #1e1e1e; /* Space between thumb and track */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #000fe6; /* Darker red when hovered */
+}
+
+/* Firefox scrollbar styles */
+html {
+    scrollbar-width: thin; /* Make the scrollbar thin */
+    scrollbar-color: #4c8bff #1e1e1e; /* Thumb color and track color */
+}
+
+/* Custom scrollbar styles for overflow containers */
+.features {
+    scrollbar-width: thin; /* For Firefox, reduce the scrollbar size */
+    scrollbar-color: #4c8bff #1e1e1e; /* For Firefox: thumb and track colors */
+}
+
+.features::-webkit-scrollbar {
+    width: 12px;
+}
+
+.features::-webkit-scrollbar-track {
+    background: #1e1e1e;
+    border-radius: 10px;
+}
+
+.features::-webkit-scrollbar-thumb {
+    background-color: #4c8bff;
+    border-radius: 10px;
+    border: 2px solid #1e1e1e;
+}
+
+.features::-webkit-scrollbar-thumb:hover {
+    background-color: #003de6;
+}
