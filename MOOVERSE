@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOOVERSE</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #6a0dad, #ff007f, #000000);
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            opacity: 0;
+            animation: fadeIn 1.5s ease-in-out forwards;
+        }
+        .dark-mode {
+            background: #333;
+            color: #fff;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background: rgba(0, 0, 0, 0.7);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .navbar h1 {
+            font-size: 1.5rem;
+            color: #ff007f;
+            text-shadow: 0 0 10px #ff007f;
+        }
+        .navbar select, .navbar button {
+            background: #800080;
+            color: #ffffff;
+            border: none;
+            padding: 10px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .navbar select:hover, .navbar button:hover {
+            background: #ff007f;
+            color: #000;
+        }
+        .content {
+            padding: 50px 20px;
+            text-align: center;
+            min-height: calc(100vh - 70px);
+            animation: fadeIn 1s ease-in-out;
+        }
+        h2 {
+            font-size: 2rem;
+            color: #ff007f;
+            text-shadow: 0 0 15px #ff007f;
+        }
+        p, ul {
+            font-size: 1.2rem;
+            margin: 20px auto;
+            max-width: 800px;
+            line-height: 1.6;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
+        .search-bar {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .search-bar input {
+            padding: 12px 20px;
+            font-size: 1.1rem;
+            border-radius: 5px;
+            border: none;
+            width: 50%;
+            margin-right: 10px;
+            background-color: #800080;
+            color: #fff;
+        }
+        .search-bar button {
+            padding: 12px 20px;
+            background-color: #ff007f;
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .script-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            margin: 10px 0;
+            transition: transform 0.3s ease;
+        }
+        .script-card:hover {
+            transform: translateY(-5px);
+        }
+        .script-card img {
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        #load-more {
+            background: #800080;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 20px;
+        }
+        #load-more:hover {
+            background: #ff007f;
+            color: #000;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <h1>MOOVERSE</h1>
+        <select id="page-select" onchange="showPage(this.value)">
+            <option value="home">Home</option>
+            <option value="Azuz X">Azuz X</option>
+            <option value="features">Azuz X Features</option>
+            <option value="Scripts">Scripts</option>
+            <option value="moohub">Moo Hub</option>
+            <option value="contact">Community</option>
+        </select>
+        <button id="dark-mode-toggle">Toggle Dark Mode</button>
+    </div>
+
+    <div id="home" class="content">
+        <h2>Welcome To MOOVERSE</h2>
+        <p>We provide the best free Roblox Scripting Services! The operation to make exploiting great again!</p>
+    </div>
+
+    <div id="features" class="content" style="display:none;">
+        <h2>Features</h2>
+        <ul>
+            <li>[+] Built-in Multi API System (Azuz_XAPI, ForlornAPI, CloudyAPI (uses xeno source))</li>
+            <li>[+] Script Hub w/ Scriptblox search results built-in</li>
+            <li>[+] Clean UI</li>
+            <li>[+] 90+ UNC</li>
+        </ul>
+    </div>
+
+    <div id="Azuz X" class="content" style="display:none;">
+        <h2>Download Instructions</h2>
+        <ul>
+            <li>Go through the linkvertise, and wait for the time limit to finish.</li>
+            <li>Turn off your antivirus before downloading the download manager from Filedm.</li>
+            <li>Run the installer and go through the adds.</li>
+            <li>Extract, Launch Azuz X, and make exploiting great again!</li>
+        </ul>
+        <div class="button-container">
+            <button onclick="window.open('https://rekonise.com/azuz-x-installer-6ewnz')">Download Azuz X</button>
+        </div>
+    </div>
+
+    <div id="contact" class="content" style="display:none;">
+        <h2>Community</h2>
+        <p>Please join our community, and make exploiting great again!:</p>
+        <ul>
+            <li>Youtube: youtube.com/@mooexploits</li>
+            <li>Discord: discord.gg/mooverse</li>
+        </ul>
+    </div>
+
+    <div id="Scripts" class="content" style="display:none;">
+        <h2>Scripts</h2>
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search Scripts..." />
+            <button id="searchButton">Search</button>
+        </div>
+        <div id="results"></div>
+        <div id="script-display" style="display:none; margin-top: 20px; text-align: left; max-width: 800px; margin: 20px auto;">
+            <h3 id="script-title"></h3>
+            <pre id="script-code" style="background: #222; color: #fff; padding: 15px; border-radius: 10px; overflow-x: auto; font-family: 'Courier New', Courier, monospace;"></pre>
+            <button id="copy-script" style="background: #ff007f; color: #000; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">Copy Script</button>
+        </div>
+        <button id="load-more" onclick="loadMoreScripts()" style="display:none;">Load More</button>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const searchButton = document.getElementById('searchButton');
+            const copyScriptButton = document.getElementById('copy-script');
+            const scriptDisplay = document.getElementById('script-display');
+            const scriptTitle = document.getElementById('script-title');
+            const scriptCode = document.getElementById('script-code');
+            const loadMoreButton = document.getElementById('load-more');
+            const resultsDiv = document.getElementById('results');
+            let currentPage = 1;
+    
+            async function fetchScripts(page = 1) {
+                const searchInput = document.getElementById('searchInput').value.trim();
+                resultsDiv.innerHTML = ''; // Clear previous results
+                loadMoreButton.style.display = 'none'; // Hide load more button initially
+    
+                if (!searchInput) {
+                    resultsDiv.innerHTML = '<p>Please enter a search term.</p>';
+                    return;
+                }
+    
+                try {
+                    const response = await fetch(`https://scriptblox-api-proxy.vercel.app/api/search?q=${encodeURIComponent(searchInput)}&page=${page}`);
+                    if (!response.ok) throw new Error(`HTTP Error: ${response.status}`);
+                    const data = await response.json();
+    
+                    if (data?.result?.scripts?.length) {
+                        data.result.scripts.forEach(script => {
+                            const scriptDiv = createScriptCard(script);
+                            resultsDiv.appendChild(scriptDiv);
+                        });
+                        loadMoreButton.style.display = 'block'; // Show load more button if scripts are found
+                    } else {
+                        resultsDiv.innerHTML = '<p>No scripts found.</p>';
+                    }
+                } catch (error) {
+                    console.error('Error fetching scripts:', error);
+                    resultsDiv.innerHTML = `<p>An error occurred: ${error.message}</p>`;
+                }
+            }
+    
+            function createScriptCard(script) {
+                const scriptDiv = document.createElement('div');
+                scriptDiv.classList.add('script-card');
+    
+                scriptDiv.innerHTML = `
+                    <h3>${script.title}</h3>
+                    <p>${script.game.name || 'Unknown Game'}</p>
+                    <button style="background: #ff007f; color: #000; padding: 10px; border: none; border-radius: 5px; cursor: pointer;" 
+                        onclick="displayScript('${encodeURIComponent(script.title)}', '${encodeURIComponent(script.script)}')">
+                        View Script
+                    </button>
+                `;
+                return scriptDiv;
+            }
+    
+            function displayScript(title, code) {
+                scriptDisplay.style.display = 'block';
+                scriptTitle.textContent = decodeURIComponent(title);
+                scriptCode.textContent = decodeURIComponent(code);
+            }
+    
+            function copyToClipboard() {
+                const codeText = scriptCode.textContent;
+                navigator.clipboard.writeText(codeText)
+                    .then(() => alert('Script copied to clipboard!'))
+                    .catch(err => console.error('Failed to copy script:', err));
+            }
+    
+            function loadMoreScripts() {
+                currentPage++;
+                fetchScripts(currentPage);
+            }
+    
+            searchButton.addEventListener('click', () => {
+                currentPage = 1;
+                fetchScripts();
+            });
+    
+            copyScriptButton.addEventListener('click', copyToClipboard);
+        });
+    </script>    
+</body>
+</html>
